@@ -1,6 +1,9 @@
+import java.util.List;
+
 public interface CSVImportExport {
-    void importuotiIsCSV(String path);
+    List<Produktas> importuotiIsCSV(String path);
     void pridetiProduktaICSV(Produktas produktas);
+
     void pašalintiProduktaIsCSV(int produktoKodas);
 
 }

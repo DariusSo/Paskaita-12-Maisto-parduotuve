@@ -4,7 +4,7 @@ public class Mesa extends Produktas{
     private String rusis;
     public Mesa(int kodas, String pavadinimas, double kaina, LocalDate galiojimoData, String rusis) {
         super(kodas, pavadinimas, kaina, galiojimoData);
-        this.rusis = getRusis();
+        this.rusis = rusis;
     }
 
     public String getRusis() {
@@ -15,14 +15,15 @@ public class Mesa extends Produktas{
         this.rusis = rusis;
     }
 
-    @Override
-    public String toString(Vaisius vaisius) {
-        return null;
-    }
 
     @Override
-    public String toString(Mesa mesa) {
-        return mesa.getKodas() + "," + mesa.getPavadinimas() + "," + mesa.getKaina() + "," + mesa.getGaliojimoData() +
-                "," + mesa.rusis;
+    public String toString() {
+        return getKodas() + "," + getPavadinimas() + "," + getKaina() + "," + getGaliojimoData() +
+                "," + this.getRusis();
+    }
+    @Override
+    public String prekesInfo(){
+        return "Prekes kodas: " + getKodas() + " | Pavadinimas: " + getPavadinimas() + " | Kaina: " + getKaina() +
+                " | Galiojimo data: " + getGaliojimoData() + " | Rusis: " + getRusis();
     }
 }

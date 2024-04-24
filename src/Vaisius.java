@@ -4,7 +4,7 @@ public class Vaisius extends Produktas{
     private boolean arEkologiskas;
     public Vaisius(int kodas, String pavadinimas, double kaina, LocalDate galiojimoData, boolean arEkologiskas) {
         super(kodas, pavadinimas, kaina, galiojimoData);
-        this.arEkologiskas = isArEkologiskas();
+        this.arEkologiskas = arEkologiskas;
     }
 
     public boolean isArEkologiskas() {
@@ -16,13 +16,15 @@ public class Vaisius extends Produktas{
     }
 
     @Override
-    public String toString(Vaisius vaisius) {
-        return vaisius.getKodas() + "," + vaisius.getPavadinimas() + "," + vaisius.getKaina() + "," + vaisius.getGaliojimoData() +
-                "," + vaisius.arEkologiskas;
+    public String toString() {
+        return getKodas() + "," + getPavadinimas() + "," + getKaina() + "," + getGaliojimoData() +
+                "," + arEkologiskas;
+    }
+    @Override
+    public String prekesInfo(){
+        return "Prekes kodas: " + getKodas() + " | Pavadinimas: " + getPavadinimas() + " | Kaina: " + getKaina() +
+                " | Galiojimo data: " + getGaliojimoData() + " | Ekologiska: " + arEkologiskas;
     }
 
-    @Override
-    public String toString(Mesa mesa) {
-        return null;
-    }
+
 }

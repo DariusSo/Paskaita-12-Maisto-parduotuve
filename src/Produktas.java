@@ -45,7 +45,10 @@ public abstract class Produktas {
         this.galiojimoData = galiojimoData;
     }
 
-    public abstract String toString(Vaisius vaisius);
 
-    public abstract String toString(Mesa mesa);
+
+    public abstract String toString();
+    public abstract String prekesInfo();
+
+
 }
